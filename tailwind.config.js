@@ -8,6 +8,7 @@ module.exports = {
       transparent: 'transparent',
       current: 'currentColor',
       'white': '#ffffff',
+      "background-color":`#5796B4`
     },
     fontFamily: {
       sans: ['"DM Sans"', ...defaultTheme.fontFamily.sans],

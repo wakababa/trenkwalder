@@ -29,7 +29,6 @@
   text-align: left;
 }
 .flip-card-back {
-  background-color: #5796B4;
   color: white;
   transform: rotateY(180deg);
   padding: 20px;
