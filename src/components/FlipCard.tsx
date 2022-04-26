@@ -16,12 +16,10 @@ export const FlipCard=({frontTitle,backTitle,backDescription,backgroundImage,bac
     const handleToggle =()=>setShow((prevState => !show))
     return(
         <div className="h-96 m-2">
-            <div
-                className="flip-card-inner"
-                style={show ? {transform: "rotateY(180deg)"} : undefined}>
-                <div className="flip-card-front transform  hover:transition duration-500 hover:scale-105"  style={show ? undefined :{backgroundImage:`url(${backgroundImage ?? defaultBackground})`,backgroundRepeat:"no-repeat",backgroundSize:"cover"}}>
+            <div className="flip-card-inner relative flex flex-col w-full h-full rounded-2xl "  style={show ? {transform: "rotateY(180deg)"} : undefined}>
+                <div className="flip-card-front absolute w-full h-full  transform  hover:transition duration-500 hover:scale-105 rounded-2xl p-4 bg-background-color"  style={show ? undefined  :{backgroundImage:`url(${backgroundImage ?? defaultBackground})`,backgroundRepeat:"no-repeat",backgroundSize:"cover"}}>
                     <div className="font-bold text-xl mb-2 text-white break-words">{frontTitle}</div>
-                    <div className="bottom-button-container">
+                    <div className="absolute bottom-0 right-0 bg-button-background rounded-3xl m-4 p-2  ">
                         <button  onClick={handleToggle}
                                  type="button"
                                  className=" flex items-center   justify-center	 inline-block rounded-full  text-white leading-normal w-9 h-9">
@@ -29,10 +27,10 @@ export const FlipCard=({frontTitle,backTitle,backDescription,backgroundImage,bac
                         </button>
                     </div>
                 </div>
-                <div className="flip-card-back bg-background-color" style={{backgroundColor:backgroundColor ?? undefined}}>
+                <div className="flip-card-back absolute w-full h-full  bg-background-color rounded-2xl p-4 text-left text-white " style={{backgroundColor:backgroundColor,transform: "rotateY(180deg)" ?? undefined}}>
                     <h1 className="font-bold mb-3">{backTitle}</h1>
                     <p className={"font-light text-sm"}>{backDescription} </p>
-                    <div className="bottom-button-container">
+                    <div className="absolute bottom-0 right-0 bg-button-background rounded-3xl m-4 p-2  ">
                         <button  onClick={handleToggle}
                                  type="button"
                                  className="flex items-center justify-center inline-block rounded-full text-white leading-normal w-9 h-9">

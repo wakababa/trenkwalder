@@ -8,7 +8,8 @@ module.exports = {
       transparent: 'transparent',
       current: 'currentColor',
       'white': '#ffffff',
-      "background-color":`#5796B4`
+      "background-color":`#5796B4`,
+      "button-background":"#ffffff36"
     },
     fontFamily: {
       sans: ['"DM Sans"', ...defaultTheme.fontFamily.sans],
